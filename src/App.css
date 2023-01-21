@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  align-items: center;
+
+  height: 20vh;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: firebrick;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  font-size: 23px;
+  font-family: sans-serif;
+}
+
+.loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  height: 100vh;
+  background-color: rgb(248, 254, 255);
+}

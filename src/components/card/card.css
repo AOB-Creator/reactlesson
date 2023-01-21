@@ -1,0 +1,28 @@
+.cards {
+  height: 50vh;
+}
+
+.card {
+  background-color: aliceblue;
+  padding: 0px 15px;
+}
+
+.card h3 {
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+.card input {
+  /* display: none; */
+}
+.card p {
+  height: 0px;
+  transition: 0.4s;
+
+  overflow: hidden;
+}
+
+.card input:checked + p {
+  height: 40px !important;
+  transition: 0.4s;
+}

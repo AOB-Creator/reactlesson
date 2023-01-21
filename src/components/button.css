@@ -1,0 +1,15 @@
+.btn {
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: sans-serif;
+  background-color: firebrick;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#icon {
+  color: wheat !important;
+}
