@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./main.scss";
-
+import image from "../../image/profile.png";
+import deliver from "../../image/deliver (1).png";
 function Main() {
   let [btn, setBtn] = useState("1");
 
@@ -8,7 +9,12 @@ function Main() {
     <section className="main">
       <div className="inner">
         <div className="left">
-          <div className="logo"></div>
+          <div className="top">
+            <div className="logo">
+              <img src={image} alt="" />
+            </div>
+            <p>Alka Yagik</p>
+          </div>
           <ul>
             <li
               onClick={() => {
@@ -43,6 +49,13 @@ function Main() {
               Settings
             </li>
           </ul>
+          <div className="delivery">
+            <img src={deliver} alt="" />
+            <h5>
+              Faster <br /> Delivery!
+            </h5>
+            <a href="">know more</a>
+          </div>
         </div>
         <div className="right">
           <div className={btn === "1" ? "page" : "hidden"}>
