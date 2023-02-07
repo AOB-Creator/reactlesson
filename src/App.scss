@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.fullweb {
+  background-color: rgb(215, 174, 174);
+  height: 300vh;
+  color: aliceblue;
+}
+
+.navbar {
+  height: 13vh;
+  background-color: black;
+}
+.container {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1200px;
+}

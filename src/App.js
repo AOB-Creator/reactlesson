@@ -1,30 +1,32 @@
-import { createContext, useEffect, useState } from "react";
-import About from "./components/about/about";
-import First from "./components/first/first";
+import { useEffect, useState } from "react";
+import Loading from "./components/loading/load";
+import "./App.scss";
+import Main from "./components/main/main";
 import axios from "axios";
-
-let DataContext = createContext();
-
 function App() {
-  let [products, setProduct] = useState();
+  let [products, setProduct] = useState([]);
+  let [loading, setLoad] = useState(true);
 
-  async function AxiosData() {
-    let response = await axios("https://jsonplaceholder.typicode.com/posts");
+  async function TakeData() {
+    let response = await axios.get(
+      "https://jsonplaceholder.typicode.com/photos"
+    );
     setProduct(response.data);
+    setTimeout(() => {
+      setLoad(false);
+    }, 3000);
   }
-
   useEffect(() => {
-    AxiosData();
+    TakeData();
   }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <>
-      <DataContext.Provider value={products}>
-        <First title="Hello world" box={false} />
-        <About />
-      </DataContext.Provider>
+      <Main />
     </>
   );
 }
-
-export { DataContext, App };
+export { App };

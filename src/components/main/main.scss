@@ -1,0 +1,57 @@
+@mixin df($ai: center, $jc: center, $fd: row) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-direction: $fd;
+}
+
+.main {
+  height: 100vh;
+  background-color: #deebfb;
+  @include df();
+  .inner {
+    height: 90%;
+    width: 90%;
+
+    display: flex;
+    .left {
+      flex: 1;
+      @include df(center, center, column);
+      .logo {
+        width: 60px;
+        height: 60px;
+        background-color: white;
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style: none;
+        width: 50%;
+        li {
+          background-color: rgb(201, 89, 89);
+          margin: 10px 0;
+          padding: 7px 15px;
+          user-select: none;
+          cursor: pointer;
+          font-size: 14px;
+          color: white;
+          text-align: center;
+          &.active {
+            background-color: firebrick;
+          }
+        }
+      }
+    }
+    .right {
+      flex: 3.5;
+      background-color: white;
+      border-radius: 20px;
+      .page {
+        height: 100%;
+        @include df();
+      }
+      .hidden {
+        display: none;
+      }
+    }
+  }
+}
