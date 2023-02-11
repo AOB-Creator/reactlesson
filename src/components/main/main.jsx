@@ -1,7 +1,23 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import "./main.scss";
 import image from "../../image/profile.png";
 import deliver from "../../image/deliver (1).png";
+import bluecircle from "../../image/Ellipse 2 (1).png";
+import { FiAperture } from "react-icons/fi";
+import Settings from "../setttings/settings";
+import Menu from "../menu/menu";
+import {
+  AiOutlineHome,
+  AiOutlineBug,
+  AiOutlineCode,
+  AiOutlineCrown,
+} from "react-icons/ai";
+import Home from "../home/home";
+import Trending from "../Trending/trend";
+import ButtonText from "../button/button";
+
+let Context = createContext();
+
 function Main() {
   let [btn, setBtn] = useState("1");
 
@@ -22,7 +38,10 @@ function Main() {
               }}
               className={btn === "1" ? "active" : ""}
             >
-              Home
+              <div className="icon">
+                <AiOutlineHome />
+              </div>
+              <div className="text">Home</div>
             </li>
             <li
               onClick={() => {
@@ -30,7 +49,10 @@ function Main() {
               }}
               className={btn === "2" ? "active" : ""}
             >
-              Menu
+              <div className="icon">
+                <AiOutlineBug />
+              </div>
+              <div className="text">Menu</div>
             </li>
             <li
               onClick={() => {
@@ -38,7 +60,10 @@ function Main() {
               }}
               className={btn === "3" ? "active" : ""}
             >
-              Trending
+              <div className="icon">
+                <AiOutlineCode />
+              </div>
+              <div className="text">Trending</div>
             </li>
             <li
               onClick={() => {
@@ -46,11 +71,15 @@ function Main() {
               }}
               className={btn === "4" ? "active" : ""}
             >
-              Settings
+              <div className="icon">
+                <AiOutlineCrown />
+              </div>
+              <div className="text">Settings</div>
             </li>
           </ul>
           <div className="delivery">
-            <img src={deliver} alt="" />
+            <img src={deliver} className="f1" alt="" />
+            <img src={bluecircle} className="f2" alt="" />
             <h5>
               Faster <br /> Delivery!
             </h5>
@@ -59,16 +88,16 @@ function Main() {
         </div>
         <div className="right">
           <div className={btn === "1" ? "page" : "hidden"}>
-            <h1>Home</h1>
+            <Home />
           </div>
           <div className={btn === "2" ? "page" : "hidden"}>
-            <h1>Menu</h1>
+            <Menu />
           </div>
           <div className={btn === "3" ? "page" : "hidden"}>
-            <h1>Trending</h1>
+            <Trending />
           </div>
           <div className={btn === "4" ? "page" : "hidden"}>
-            <h1>Settings</h1>
+            <Settings />
           </div>
         </div>
       </div>
@@ -76,4 +105,4 @@ function Main() {
   );
 }
 
-export default Main;
+export { Main, Context };

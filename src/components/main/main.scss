@@ -44,21 +44,46 @@
         list-style: none;
         width: 50%;
         li {
-          background-color: rgb(201, 89, 89);
+          background-color: transparent;
           margin: 10px 0;
-          padding: 7px 15px;
+          border-radius: 5px;
           user-select: none;
           cursor: pointer;
           font-size: 14px;
-          color: white;
           text-align: center;
+          display: flex;
+          position: relative;
+          color: #909090;
+          .icon {
+            height: 35px;
+            width: 47px;
+            background-color: white;
+            color: #909090;
+            @include df();
+            font-size: 18px;
+            border-radius: 5px;
+          }
+          .text {
+            height: 35px;
+            width: 100%;
+
+            @include df();
+          }
           &.active {
-            background-color: firebrick;
+            background-color: #ff5454;
+            .text {
+              color: white;
+            }
+            .icon {
+              background-color: #df4545;
+              color: white;
+            }
           }
         }
         margin: 10px 0;
       }
       .delivery {
+        user-select: none;
         width: 130px;
         height: 130px;
         background-color: white;
@@ -67,17 +92,26 @@
         position: relative;
         padding: 10px 10px;
         @include df(flex-start, flex-end, column);
-        img {
+        img.f1 {
           width: 130px;
           position: absolute;
           left: 50%;
-          transform: translateY(-20%) translateX(-50%);
+          z-index: 2;
+          transform: translateY(-10%) translateX(-50%);
+        }
+        img.f2 {
+          width: 60px;
+          position: absolute;
+          left: 50%;
+          transform: translateY(-150%) translateX(-50%);
         }
         h5 {
-          font-size: 16px;
+          font-size: 18px;
+          font-weight: 800;
+          color: rgb(32, 32, 32);
         }
         a {
-          font-size: 11px;
+          font-size: 10px;
           text-decoration: none;
           color: rgb(31, 31, 31);
           text-transform: capitalize;
@@ -88,9 +122,9 @@
       flex: 3.5;
       background-color: white;
       border-radius: 20px;
+      overflow: hidden;
       .page {
         height: 100%;
-        @include df();
       }
       .hidden {
         display: none;
